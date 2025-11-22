@@ -1,0 +1,52 @@
+.favorites {
+  flex: 1;
+  padding: 5.5rem 1rem 3rem;
+  width: 100%;
+}
+
+.favorites h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+  text-shadow: 0 2px 10px rgba(229, 9, 20, 0.4);
+}
+
+.favorites-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  margin: 2rem auto;
+  max-width: 90%;
+  border: 1px solid rgba(229, 9, 20, 0.2);
+}
+
+.favorites-empty h2 {
+  color: #e50914;
+  font-size: 1.8rem;
+}
+
+.favorites-empty p {
+  color: #999;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+/* Usa o mesmo grid da Home */
+.movies-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 0 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+@media (min-width: 640px) {
+  .favorites { padding: 6rem 1.5rem 3rem; }
+  .movies-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .favorites { padding: 7rem 3rem 4rem; }
+  .movies-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+}

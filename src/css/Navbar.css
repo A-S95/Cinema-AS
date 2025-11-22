@@ -1,0 +1,62 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  background: rgba(29, 29, 29, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.75rem 1rem;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(229, 9, 20, 0.3);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand .logo-3d {
+  height: 48px;
+  transition: transform 0.4s ease;
+}
+
+.logo-3d:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: #e0e0e0;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background: #e50914;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .navbar { height: 80px; padding: 0 2rem; }
+  .logo-3d { height: 62px; }
+  .nav-link { font-size: 1.1rem; }
+  .navbar-links { gap: 2rem; }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .navbar { height: 90px; padding: 0 3rem; }
+  .logo-3d { height: 78px; }
+  .nav-link { font-size: 1.25rem; }
+  .navbar-links { gap: 2.8rem; }
+}

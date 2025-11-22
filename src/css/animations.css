@@ -1,0 +1,162 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 10px rgba(255, 0, 0, 0.4));
+  }
+  50% {
+    filter: brightness(1.3) drop-shadow(0 0 25px rgba(255, 0, 0, 0.8));
+  }
+}
+
+/* Classes reutilizáveis com controle responsivo */
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-in-down {
+  opacity: 0;
+  animation: fadeInDown 0.7s ease-out forwards;
+}
+
+.scale-in {
+  opacity: 0;
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Animação ao carregar cards (stagger effect) */
+.movie-card {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+/* Delay progressivo para cada card (efeito cascata lindo) */
+.movies-grid > *:nth-child(1) { animation-delay: 0.1s; }
+.movies-grid > *:nth-child(2) { animation-delay: 0.2s; }
+.movies-grid > *:nth-child(3) { animation-delay: 0.3s; }
+.movies-grid > *:nth-child(4) { animation-delay: 0.4s; }
+.movies-grid > *:nth-child(5) { animation-delay: 0.5s; }
+.movies-grid > *:nth-child(6) { animation-delay: 0.6s; }
+.movies-grid > *:nth-child(7) { animation-delay: 0.7s; }
+.movies-grid > *:nth-child(8) { animation-delay: 0.8s; }
+.movies-grid > *:nth-child(n+9) { animation-delay: 0.9s; }
+
+/* Hover mais suave e com glow vermelho */
+.movie-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  z-index: 10;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Navbar entra com fade down */
+.navbar {
+  animation: fadeInDown 0.8s ease-out;
+}
+
+/* Logo com entrada + brilho suave */
+.logo-3d {
+  animation: scaleIn 1s ease-out 0.3s both, pulseGlow 4s infinite 2s;
+}
+
+/* Modal entra com zoom suave */
+.modal-overlay {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.modal-content {
+  animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
+}
+
+/* Trailer com efeito de loading elegante */
+.trailer-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.trailer-container:hover::before {
+  opacity: 1;
+}
+
+/* Responsivo: Reduz animações em mobile para performance */
+@media (max-width: 639px) {
+  /* Desativa delays longos */
+  .movies-grid > * {
+    animation-delay: 0s !important;
+    animation-duration: 0.5s !important;
+  }
+
+  .movie-card:hover {
+    transform: translateY(-6px) scale(1.02);
+  }
+
+  .logo-3d {
+    animation: scaleIn 0.8s ease-out both;
+  }
+
+  /* Desativa animações pesadas em mobile */
+  .trailer-container::before,
+  .favorite-btn.active {
+    animation: none;
+  }
+
+  .modal-content {
+    animation-duration: 0.3s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
