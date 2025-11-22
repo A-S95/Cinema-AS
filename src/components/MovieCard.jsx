@@ -41,7 +41,7 @@ function MovieCard({ movie }) {
         </div>
         <div className="movie-info">
           <h3>{movie.title}</h3>
-          <p>{movie.release_date?.slice(0, 4)}</p>
+          <p> {new Date(movie.release_date).toLocaleDateString('pt-BR', {year: 'numeric', month: 'numeric', day: 'numeric',})} </p>
         </div>
         <button
           className={`favorite-btn ${isFavorite ? 'active' : ''}`}
