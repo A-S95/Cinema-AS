@@ -20,39 +20,39 @@ Cinema-AS is a web application built with React, designed to provide users with 
     - preview: npm run preview
 
 📁 Project Structure
-    .
-    ├── eslint.config.js
-    ├── index.html
-    ├── package.json
-    ├── public
-    │   └── vite.svg
-    ├── src
-    │   ├── App.jsx
-    │   ├── assets
-    │   │   ├── logo-as.svg
-    │   │   └── react.svg
-    │   ├── components
-    │   │   ├── MovieCard.jsx
-    │   │   └── NavBar.jsx
-    │   ├── contexts
-    │   │   └── MovieContext.jsx
-    │   ├── css
-    │   │   ├── App.css
-    │   │   ├── Favorites.css
-    │   │   ├── Home.css
-    │   │   ├── MovieCard.css
-    │   │   ├── Navbar.css
-    │   │   ├── animations.css
-    │   │   ├── index.css
-    │   │   └── modal.css
-    │   ├── main.jsx
-    │   ├── pages
-    │   │   ├── Favorites.jsx
-    │   │   └── Home.jsx
-    │   └── services
-    │       └── api.js
-    ├── vercel.json
-    └── vite.config.js
+.
+├── eslint.config.js
+├── index.html
+├── package.json
+├── public
+│   └── vite.svg
+├── src
+│   ├── App.jsx
+│   ├── assets
+│   │   ├── logo-as.svg
+│   │   └── react.svg
+│   ├── components
+│   │   ├── MovieCard.jsx
+│   │   └── NavBar.jsx
+│   ├── contexts
+│   │   └── MovieContext.jsx
+│   ├── css
+│   │   ├── App.css
+│   │   ├── Favorites.css
+│   │   ├── Home.css
+│   │   ├── MovieCard.css
+│   │   ├── Navbar.css
+│   │   ├── animations.css
+│   │   ├── index.css
+│   │   └── modal.css
+│   ├── main.jsx
+│   ├── pages
+│   │   ├── Favorites.jsx
+│   │   └── Home.jsx
+│   └── services
+│       └── api.js
+├── vercel.json
+└── vite.config.js
 
 🛠️ Development Setup
     - Node.js/JavaScript Setup
